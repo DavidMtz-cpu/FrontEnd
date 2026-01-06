@@ -1,0 +1,24 @@
+import { ChangeDetectionStrategy, Component, Input, Sanitizer, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MarkdownModule } from 'ngx-markdown';
+
+@Component({
+  selector: 'app-chat-message',
+  standalone: true,
+  imports: [
+    MarkdownModule
+  ],
+  templateUrl: './chatMessage.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ChatMessageComponent { 
+  @Input({required: true}) text!: string;
+
+  @Input() audioUrl?: string;
+
+  @Input() imageInfo?: { url: string, alt: string };
+
+
+
+
+}
